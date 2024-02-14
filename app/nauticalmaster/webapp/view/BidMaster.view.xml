@@ -1,0 +1,299 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    controllerName="com.ingenx.nauti.nauticalmaster.controller.BidMaster"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page id="page">
+        <headerContent>
+            <!-- Your header content goes here -->
+            <Bar id="_IDGenBar2" class="customHeader">
+                <contentLeft>
+                    <core:Icon id="_IDGenIcon1"
+                        src="sap-icon://nav-back"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPress"
+                    />
+                    <core:Icon id="_IDGenIcon2"
+                        src="sap-icon://home"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPressHome"
+                    />
+                   
+                    <Image id="_IDGenImage1"
+                         class="size1"
+                        src="./images/ignxlogo.png"
+                        height="75%"
+                    />
+                    <Text id="_IDGenText1"
+                        class="textBid size1"
+                        text="Change View :Master Details for Biding: Overview"
+                    />
+                </contentLeft>
+                <contentRight>
+                    <core:Icon id="_IDGenIcon3"
+                        src="sap-icon://search"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                    <core:Icon id="_IDGenIcon4"
+                        src="sap-icon://SAP-icons-TNT/user"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData id="_IDGenFlexItemData2" growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                </contentRight>
+            </Bar>
+        </headerContent>
+
+        <Bar id="_IDGenBar12" class="_IDGenBar1">
+            <contentLeft>
+                <Button
+                    id="_IDGenButton12"
+                    text="New Entries"
+                    press="newEntries"
+                />
+                <Button
+                    id="_IDGenButton13"
+                    text="Copy As"
+                    press="pressCopy"
+                />
+                <Button
+                    id="_IDGenButton14"
+                    text="Delete"
+                    press="onDeletePress"
+                />
+                <Button
+                    id="_IDGenButton15"
+                    text="Edit"
+                    press="pressEdit"
+                />
+               
+                <Button
+                    id="button"
+                    icon="sap-icon://slim-arrow-down"
+                    iconFirst="false"
+                    text="More"
+                    press="onPress"
+                    ariaHasPopup="Menu"
+                />
+            </contentLeft>
+            <contentRight>
+                <core:Icon
+                    id="_IDGenIcon33"
+                    src="sap-icon://print"
+                    class="size1"
+                    color="#FF0000"
+                />
+                <Button
+                    id="_IDGenButton19"
+                    text="Display"
+                />
+                <Button
+                    id="_IDGenButton20"
+                    text="Exit"
+                    press="onExit"
+                />
+            </contentRight>
+        </Bar>
+
+        <Text id="_IDGenText2" text="Bid Master" class="masterheadings" />
+
+        <Table id="createTypeTable"
+            width="100%"
+            class="mastertables"
+            items="{/MAS}"
+            mode="MultiSelect"
+            selectionChange="selectedItems">
+
+            <columns>
+                <Column >
+                    <Label text="User" />
+                </Column>
+                <Column >
+                    <Label text="Code" />
+                </Column>
+                <Column >
+                    <Label text="Value" />
+                </Column>
+                <Column >
+                    <Label text="Revaluation" />
+                </Column>
+                 <Column  >
+                    <Label text="Crcy" />
+                </Column>
+                <Column >
+                    <Label text="Data Type" />
+                </Column>
+                <Column >
+                    <Label text="Table Name" />
+                </Column>
+                <Column >
+                    <Label text="Multiple Column" />
+                </Column>
+               
+            </columns>
+            <ColumnListItem id="_istItem1">
+                <cells>
+                   
+                    <Text id="_IDGenText3" text="{BNAME}" />
+                    <Text id="_IDGenText4" text="{CODE}" />
+                    <Text id="_IDGenText5" text="{VALUE}" />
+                    <Text id="_IDGenText6" text="{CVALUE_code}" />
+                    <Text id="_IDGenText7" text="{CUNIT_code}" />
+                    <Text id="_IDGenText8" text="{DATATYPE}" />
+                    <Text id="_IDGenText9" text="{TABLENAME}" />
+                    <CheckBox id="_IDGenText10" selected="{MULTI_CHOICE}" />
+                </cells>
+            </ColumnListItem>
+        </Table>
+
+        <Table id="entryTypeTable"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false"
+        >
+            <columns>
+                <Column id="User">
+                    <Label text="User" />
+                </Column>
+                <Column >
+                    <Label text="Code" />
+                </Column>
+                <Column >
+                    <Label text="Value" />
+                </Column>
+                <Column >
+                    <Label text="Revaluation" />
+                </Column>
+                 <Column  >
+                    <Label text="Crcy" />
+                </Column>
+                <Column >
+                    <Label text="Data Type" />
+                </Column>
+                <Column >
+                    <Label text="Table Name" />
+                </Column>
+                <Column >
+                    <Label text="Multiple Column" />
+                </Column>
+               
+            </columns>
+            <ColumnListItem id="istItem1">
+                <cells>
+                    <Input id="BNAME"/>
+                    <Input id="CODE" />
+                    <Input id="VALUE"/>
+                    <Input id="CVALUE"/>
+                    <Input id="CUNIT"/>
+                    <Input id="DATATYPE" />
+                    <Input id="TABLENAME"/>
+                    <CheckBox id="MULTI_CHOICE"  />
+                </cells>
+            </ColumnListItem>
+        </Table>
+
+        <Table
+            id="updateTypeTable"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false" >
+            <columns>
+                <Column >
+                    <Label text="User" />
+                </Column>
+                <Column >
+                    <Label text="Code" />
+                </Column>
+                <Column >
+                    <Label text="Value" />
+                </Column>
+                <Column >
+                    <Label text="Revaluation" />
+                </Column>
+                 <Column  >
+                    <Label text="Crcy" />
+                </Column>
+                <Column >
+                    <Label text="Data Type" />
+                </Column>
+                <Column >
+                    <Label text="Table Name" />
+                </Column>
+                <Column >
+                    <Label text="Multiple Column" />
+                </Column>
+               
+            </columns>
+            <items>
+                <ColumnListItem id="stItem1">
+                    <cells>
+                        <Input id="bname" />
+                        <Input id="code" value="" editable="false"/>
+                        <Input id="value" />
+                        <Input id="cvalue" />
+                        <Input id="cunit" />
+                        <Input id="datatype" />
+                        <Input id="tablename" />
+                        <CheckBox id="multichoice"  />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+            <OverflowToolbar
+                id="mainPageFooter2"
+                design="Auto"
+                visible="false" >
+                <ToolbarSpacer id="_IDGenToolbarSpacer4" />
+                <Button
+                    id="mainPageSave12"
+                    text="Update"
+                    press="onUpdate"
+                />
+                <Button
+                    id="_IDGenButton23"
+                    text="Cancel"
+                    press="onCancel"
+                />
+            </OverflowToolbar>
+ 
+ 
+            <!-- main page footer -->
+            <OverflowToolbar
+                id="mainPageFooter"
+                design="Auto"
+                visible="false">
+                <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+                <Button
+                    id="mainPageSave"
+                    text="Save"
+                    press="onSave"
+                />
+                <Button
+                    id="_IDGenButton22"
+                    text="Cancel"
+                    press="onCancel"
+                />
+            </OverflowToolbar>
+       
+        
+       
+ 
+       
+    </Page>
+</mvc:View>
+ 

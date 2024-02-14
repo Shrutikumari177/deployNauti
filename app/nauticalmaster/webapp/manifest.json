@@ -1,0 +1,266 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "com.ingenx.nauti.nauticalmaster",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.12.3",
+      "toolsId": "a2195119-70b1-4c33-9e87-5040179c2463"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/nautical-btp/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "master-manage": {
+          "semanticObject": "master",
+          "action": "manage",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.6",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ingenx.nauti.nauticalmaster.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.ingenx.nauti.nauticalmaster.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RoutemasterDashboard",
+          "pattern": ":?query:",
+          "target": [
+            "TargetmasterDashboard"
+          ]
+        },
+        {
+          "name": "RouteVoyageType",
+          "pattern": "voyagetype",
+          "target": [
+            "TargetVoyageType"
+          ]
+        },
+        {
+          "name": "RouteVesselType",
+          "pattern": "VesselType",
+          "target": [
+            "TargetVesselType"
+          ]
+        },
+        {
+          "name": "RouteCurrencyType",
+          "pattern": "CurrencyType",
+          "target": [
+            "TargetCurrencyType"
+          ]
+        },
+        {
+          "name": "RouteClassMaster",
+          "pattern": "ClassMaster",
+          "target": [
+            "TargetClassMaster"
+          ]
+        },
+        {
+          "name": "RouteBidMaster",
+          "pattern": "BidMaster",
+          "target": [
+            "TargetBidMaster"
+          ]
+        },
+        {
+          "name": "RouteCostMaster",
+          "pattern": "CostMaster",
+          "target": [
+            "TargetCostMaster"
+          ]
+        },
+        {
+          "name": "RouteEventMaster",
+          "pattern": "EventMaster",
+          "target": [
+            "TargetEventMaster"
+          ]
+        },
+        {
+          "name": "RoutePortLocUpd",
+          "pattern": "PortLocUpd",
+          "target": [
+            "TargetPortLocUpd"
+          ]
+        },
+        {
+          "name": "RoutePortMaster",
+          "pattern": "PortMaster",
+          "target": [
+            "TargetPortMaster"
+          ]
+        }
+        
+      ],
+      "targets": {
+        "TargetmasterDashboard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "masterDashboard",
+          "viewName": "masterDashboard"
+        },
+        "TargetVoyageType": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "VoyageType",
+          "viewName": "VoyageType"
+        },
+        "TargetVesselType": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "VesselType",
+          "viewName": "VesselType"
+        },
+        "TargetCurrencyType": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CurrencyType",
+          "viewName": "CurrencyType"
+        },
+        "TargetClassMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ClassMaster",
+          "viewName": "ClassMaster"
+        },
+        "TargetBidMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "BidMaster",
+          "viewName": "BidMaster"
+        },
+        "TargetCostMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CostMaster",
+          "viewName": "CostMaster"
+        },
+        "TargetEventMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EventMaster",
+          "viewName": "EventMaster"
+        },
+        "TargetPortLocUpd": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PortLocUpd",
+          "viewName": "PortLocUpd"
+        },
+        "TargetPortMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PortMaster",
+          "viewName": "PortMaster"
+        }
+      }
+     
+    },
+    "rootView": {
+      "viewName": "com.ingenx.nauti.nauticalmaster.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core">
+ 
+    <Menu itemSelected="onMenuAction">
+        <MenuItem text="MaintainGroup" press="onConfigMaintainGroup"/>
+        <MenuItem text="Voyage" press="onConfigVoyage"/>
+        <MenuItem text="Chartering" press="onConfigChartering"/>
+    </Menu>
+ 
+</core:FragmentDefinition>

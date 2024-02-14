@@ -1,0 +1,10 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core">
+
+    <Menu itemSelected="onMenuAction">
+        <MenuItem text="BP Master Details" press="BPDetailpress"/>
+        <MenuItem text="VendorDataSyncing" press="onVendorDataSyncingPress"/>
+    </Menu>
+
+</core:FragmentDefinition>

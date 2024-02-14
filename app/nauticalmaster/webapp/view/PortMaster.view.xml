@@ -1,0 +1,287 @@
+
+<mvc:View
+    xmlns:tnt="sap.tnt"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    controllerName="com.ingenx.nauti.nauticalmaster.controller.PortMaster"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+>
+    <Page id="_IDGenPage1">
+        <headerContent>
+            <!-- Your header content goes here -->
+            <Bar class="customHeader">
+                <contentLeft>
+                    <core:Icon
+                        src="sap-icon://nav-back"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPress"
+                    />
+                    <core:Icon
+                        src="sap-icon://home"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPressHome"
+                    />
+                    <Image
+                         class="size1"
+                        src="./images/ignxlogo.png"
+                        height="75%"
+                    />
+                    <Text
+                        class="textBid size1"
+                        text='Display View Cost Component Table: Overview'
+                    />
+                </contentLeft>
+                <contentRight>
+                    <core:Icon
+                        src="sap-icon://search"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                    <core:Icon
+                        src="sap-icon://SAP-icons-TNT/user"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                </contentRight>
+            </Bar>
+        </headerContent>
+
+        <Bar id="_IDGenBar1" class="_IDGenBar1" >
+            <contentLeft>
+                <Button
+                    text="New Entries"
+                    press="newEntries"
+                />
+                <Button text="Copy As" press="pressCopy"/>
+                <Button text="Edit"  press="pressEdit"/>
+                <Button text="Delete" press="onDeletePress"/>
+                
+                <Button
+                    id="button"
+                    icon="sap-icon://slim-arrow-down"
+                    iconFirst="false"
+                    text="More"
+                    press="onPress"
+                    ariaHasPopup="Menu"
+                />
+            </contentLeft>
+            <contentRight>
+                <core:Icon
+                    src="sap-icon://print"
+                    class="size1"
+                    color="#FF0000"
+                />
+                <!-- <Button text="Display" /> -->
+                <Button
+                    text="Exit"
+                    press="onExit"
+                />
+            </contentRight>
+        </Bar>
+
+        <Label text="Port Master Table " class="masterheadings" />
+
+        <Table
+            id="createTypeTable"
+            mode="MultiSelect"
+            items="{/ZPORT}"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables" >
+            <columns>
+                <Column id="_IDGenColumn1">
+                    <Text
+                        id="_IDGenText11"
+                        text="Value"
+                    />
+                </Column>
+                <Column id="_IDGenColumn2">
+                    <Text
+                        id="_IDGenText2"
+                        text="Field Description"
+                    />
+                </Column>
+                <Column id="_IDGenColumn3">
+                    <Text
+                        id="_IDGenText3"
+                        text="Country"
+                    />
+                </Column>
+                <Column id="_IDGenColumn4">
+                    <Text
+                        id="_IDGenText4"
+                        text="Country Name"
+                    />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem1">
+                    <cells>
+                     
+                        <Text
+                            id="_IDGenInput1"
+                            text="{ZF_VALUE}"
+                        />
+                        <Text
+                            id="_IDGenInput2"
+                            text="{ZF_DESC}"
+                        />
+                        <Text
+                            id="_IDGenInput3"
+                            text="{COUNTRY_code}"
+                        />
+                        <Text
+                            id="_IDGenInput4"
+                            text="{COUNTRYN_code}"
+                        />
+                       
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <Table
+            id="entryTypeTable"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false"
+            mode="MultiSelect" >
+            <columns>
+                 <Column id="_IDGeolumn1">
+                    <Text
+                        id="_IDGenxt11"
+                        text="Value"
+                    />
+                </Column>
+                <Column id="_IDGenlumn2">
+                    <Text
+                        id="_IDGeext2"
+                        text="Field Description"
+                    />
+                </Column>
+                <Column id="_IDGnColumn3">
+                    <Text
+                        id="_IDGnText3"
+                        text="Country"
+                    />
+                </Column>
+                <Column id="_IDGnColumn4">
+                    <Text
+                        id="_IDGnText4"
+                        text="Country Name"
+                    />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Input id="value"  maxLength="4"/>
+                        <Input id="field" />
+                        <Input id="field2" />
+                        <Input id="field3" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+       
+        <Table
+            id="updateTypeTable"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false">
+            <columns>
+                 <Column id="_IDGenComn1">
+                    <Text
+                        id="_IDGenTex1"
+                        text="Value"
+                    />
+                </Column>
+                <Column id="_IDGenColu2">
+                    <Text
+                        id="_IDGenTe2"
+                        text="Field Description"
+                    />
+                </Column>
+                <Column id="IDGenColumn3">
+                    <Text
+                        id="IDGenText3"
+                        text="Country"
+                    />
+                </Column>
+                <Column id="IDGenColumn4">
+                    <Text
+                        id="IDGenText4"
+                        text="Country Name"
+                    />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text id="value1" text="" />
+                        <Input id="field1"  editable="true"/>
+                        <Input id="field5"  editable="true"/>
+                        <Input id="field4"  editable="true"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+       
+            <OverflowToolbar id="mainPageFooter" design="Auto" visible="false" >
+                <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+                <Button
+                    id="mainPageSave"
+                    type="Reject"
+                    text="Save"
+                    press="onSave"
+                />
+                <Button
+                    id="_IDGenButton22"
+                    type="Reject"
+                    text="Cancel"
+                    press="onCancel"
+                />
+            </OverflowToolbar>
+
+            <OverflowToolbar id="mainPageFooter2" design="Auto" visible="false" >
+                <ToolbarSpacer id="_IDGenToolbarSpacer4" />
+                <Button
+                    id="mainPageSave12"
+                    type="Reject"
+                    text="Update"
+                    press="onUpdate"
+                />
+                <Button
+                    id="_IDGenButton23"
+                    type="Reject"
+                    text="Cancel"
+                    press="onCancel"
+                />
+            </OverflowToolbar>
+ 
+            <!--new entries footer -->
+           
+       
+    </Page>
+ 
+    
+    
+</mvc:View>

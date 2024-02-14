@@ -1,0 +1,83 @@
+<mvc:View xmlns:cards="sap.f.cards" controllerName="com.ingenx.nauti.nauticalmaster.controller.PortLocUpd"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m" xmlns:tnt="sap.tnt">
+        <Page id="page">
+            <headerContent>
+              <!-- Your header content goes here -->
+                <Bar class="customHeader">
+                    <contentLeft>
+                        <core:Icon
+                            src="sap-icon://nav-back"
+                            class="size1"
+                            color="#FFFFFF"
+                            press="onBackPress"
+                        />
+                        <core:Icon
+                            src="sap-icon://home"
+                            class="size1"
+                            color="#FFFFFF"
+                            press="onBackPressHome"
+                        />
+                        <Image
+                             class="size1"
+                            src="./images/ignxlogo.png"
+                            height="75%"
+                        />
+                        <Text
+                            class="textBid size1"
+                            text="Upload Program of Port"
+                        />
+                    </contentLeft>
+                    <contentRight>
+                        <core:Icon
+                            src="sap-icon://search"
+                            class="size1"
+                            color="#FFFFFF"
+                        >
+                            <core:layoutData>
+                                <FlexItemData growFactor="1" />
+                            </core:layoutData>
+                        </core:Icon>
+                        <core:Icon
+                            src="sap-icon://SAP-icons-TNT/user"
+                            class="size1"
+                            color="#FFFFFF"
+                        >
+                            <core:layoutData>
+                                <FlexItemData growFactor="1" />
+                            </core:layoutData>
+                        </core:Icon>
+                    </contentRight>
+                    </Bar>
+            </headerContent>
+            <Bar id="_IDGenBar1" class="_IDGenBar1">
+            <contentLeft>
+                <Button id="_IDGenButton1" text="Save as Variant" press="onSaveAs"></Button>
+                <Button id="_IDGenButton2" text="Download as Template" press="onDownloadPress"></Button>
+                <Button id="button" icon="sap-icon://slim-arrow-down" iconFirst="false" text="More" press="onPress" ariaHasPopup="Menu"/>
+            </contentLeft>
+            <contentRight>
+                <Button id="_IDGenButton4" text="Exit" press="onExit"></Button>
+            </contentRight>
+            </Bar>
+ 
+ 
+ 
+            <HBox id="_IDGenHBox1" alignItems="Center" class="masterFileUpload">
+                <Label id="_IDGenLabel1" text="File Name:"></Label>
+                <Input id="_IDGenInput1" width="450px"  ></Input>
+                <Button id="_IDGenButton3" icon="sap-icon://value-help" press="fileupload"></Button>
+            </HBox>
+ 
+           
+            <footer>
+                <OverflowToolbar design="Solid">
+                <ToolbarSpacer />
+                <Button text="Execute" type="Negative" icon="none" ></Button>
+                
+                </OverflowToolbar>
+            </footer>
+        </Page>
+
+</mvc:View>

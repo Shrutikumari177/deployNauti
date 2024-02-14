@@ -1,0 +1,143 @@
+<mvc:View controllerName="com.ingenx.nauti.nauticalmaster.controller.masterDashboard"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+xmlns="sap.m" xmlns:tnt="sap.tnt" >
+    <Page id="_IDGenPage1" class="page">
+       
+        <headerContent>
+            <!-- Your header content goes here -->
+            <Bar id="_IDGenBar1" class="customHeader">
+                <contentLeft>
+                    <core:Icon id="_IDGenIcon1"
+                        src="sap-icon://nav-back"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPress"
+                    />
+                    <core:Icon id="_IDGenIcon2"
+                        src="sap-icon://home"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPressHome"
+                    />
+                    <Image
+                         class="size1"
+                        src="./images/ignxlogo.png"
+                        height="75%" activeSrc="https://www.ingenxtec.com"
+                   
+                    />
+                    <Text id="_IDGenText1"
+                        class="textBid size1"
+                        text="Master Data Dashboard"
+                    />
+                </contentLeft>
+                <contentRight>
+                    <core:Icon id="_IDGenIcon3"
+                        src="sap-icon://search"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                    <core:Icon id="_IDGenIcon4"
+                        src="sap-icon://SAP-icons-TNT/user"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData id="_IDGenFlexItemData2" growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                </contentRight>
+            </Bar>
+        </headerContent>
+ 
+        <VBox id="_IDGenVBox1"  class="vPanel">
+       
+           <Panel id="_IDGenPanel1"  class="dashboardPanel" width="950px" height="auto">
+ 
+                <ObjectListItem id="_IDGenObjectListItem1"  intro="Selection Options" class="headerTxt"></ObjectListItem>
+ 
+               
+                <Button id="_IDGenButton2"  text="Voyage Type" type="Reject"  class="one" press="navToVoyageType"></Button>
+               
+                     
+               
+                <Button id="_IDGenButton4"  text="Vessel Type" type="Reject"  class="three" press="navToVesselType"></Button>
+               
+                     
+               
+                <Button id="_IDGenButton6"  text="Currency" type="Reject"  class="five" press="navToCurrencyType"></Button>
+               
+                <Button id="_IDGenButton7"  text="Class Master" type="Reject" class="one" press="navToClassMaster"></Button>
+               
+             
+               
+                <Button id="_IDGenButton10"  text="Bid Master" type="Reject" class="three" press="navToBidMaster"></Button>
+               
+                     
+               
+                <Button id="_IDGenButton11"   text="Port/Loc Master" type="Reject" class="five" press="navToPortLocMaster"></Button>
+               
+                <Button id="_IDGenButton12"  text="Route Master" type="Reject" class="one" press="navToRouterMaster"></Button>
+               
+                     
+               
+                <Button id="_IDGenButton14"  text="UOM" type="Reject" class="three" press="navToUoM"></Button>
+               
+               
+               
+                <Button id="_IDGenButton16"  text="Cost Master" type="Reject" class="five" press="navToCostMaster"></Button>
+               
+                <Button id="_IDGenButton18"  text="Event Master" type="Reject" class="one" press="navToEventMaster"></Button>
+                   
+               
+ 
+                <Button id="_IDGenButton19"  text="Ref. Doc. Indicator" type="Reject" class="three" press="navToRefDocIndicator"></Button>
+               
+           
+               
+                <Button id="onBusinessPartnerBtn" text="Business Partner" type="Reject" class="five" press="navToBusinessPartner" ariaHasPopup="Menu"></Button>
+               
+                <Button id="onConfigBtn"  text="Configure Release" type="Reject" class="one" press="navToConfigRelease" ariaHasPopup="Menu"></Button>
+             
+               
+                <Button id="_IDGenButton24"  text="Port/Loc Upload" type="Reject" class="three" press="navToPortLocUpd"></Button>
+               
+           
+               
+                <Button id="_IDGenButton26"  text="Port Master" type="Reject" class="five" press="navToPortMaster"></Button>
+               
+                <Button id="_IDGenButton27"  text="Port Upd" type="Reject" class="one" press="navToPortUpd"></Button>
+               
+               
+                <Button id="_IDGenButton29"  text="Country Master Upd" type="Reject" class="three" press="navToCountryMasterUpd"></Button>
+               
+               
+               
+                <Button id="_IDGenButton31"  text="Country Master" type="Reject" class="five" press="navToCountryMaster"></Button>
+               
+                <Button id="_IDGenButton32"  text="API URL" type="Reject" class="one" press="navToApiurl"></Button>
+               
+               
+               
+                <Button id="_IDGenButton34"  text="Marine Path Upd" type="Reject" class="three" press="navToMarinePathUpd"></Button>
+               
+               
+               
+                <Button id="_IDGenButton36"  text="Marine Dis Upd" type="Reject" class="five" press="navToMarineDisUpd"></Button>
+            </Panel>  
+ 
+            <Panel id="_IDGenPanel2"  width="0px">
+                <Image id="_IDGenImage1" width="350px" class="nauticalimg1" src="./images/nautical.png" height="auto"></Image>
+            </Panel>
+ 
+        </VBox>
+        <footer >
+        <OverflowToolbar design="Solid" class="pageFooter"></OverflowToolbar>
+        </footer>
+     
+    </Page>
+</mvc:View>

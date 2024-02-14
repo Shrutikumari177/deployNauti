@@ -1,0 +1,263 @@
+<mvc:View controllerName="com.ingenx.nauti.nauticalmaster.controller.VesselType"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"   xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt" xmlns:core="sap.ui.core">
+    <Page id="_IDGenPage1">
+        <headerContent>
+            <!-- Your header content goes here -->
+            <Bar
+                id="_IDGenBar1"
+                class="customHeader"
+            >
+                <contentLeft>
+                    <core:Icon
+                        id="_IDGenIcon1"
+                        src="sap-icon://nav-back"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPress"
+                    />
+                    <core:Icon
+                        id="_IDGenIcon2"
+                        src="sap-icon://home"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPressHome"
+                    />
+                    <Image
+                         class="size1"
+                        id="_IDGenImage2"
+                        src="./images/ignxlogo.png"
+                        height="75%"
+                    />
+                    <Text
+                        id="_IDGenText1"
+                        class="textBid size1"
+                        text='Change View Refrence Vessel Type Search Help: Overview'
+                    />
+                </contentLeft>
+                <contentRight>
+                    <core:Icon
+                        id="_IDGenIcon3"
+                        src="sap-icon://search"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData
+                                id="_IDGenFlexItemData1"
+                                growFactor="1"
+                            />
+                        </core:layoutData>
+                    </core:Icon>
+                    <core:Icon
+                        id="_IDGenIcon4"
+                        src="sap-icon://SAP-icons-TNT/user"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
+                        <core:layoutData>
+                            <FlexItemData
+                                id="_IDGenFlexItemData2"
+                                growFactor="1"
+                            />
+                        </core:layoutData>
+                    </core:Icon>
+                </contentRight>
+            </Bar>
+        </headerContent>
+        <Bar
+            id="_IDGenBar12"
+            class="_IDGenBar1"
+        >
+            <contentLeft>
+                <Button
+                    id="_IDGenButton12"
+                    text="New Entries"
+                    press="newEntries"
+                />
+                <Button
+                    id="_IDGenButton13"
+                    text="Copy As"
+                    press="pressCopy"
+                />
+                <Button
+                    id="_IDGenButton14"
+                    text="Delete"
+                    press="onDeletePress"
+                />
+                <Button
+                    id="_IDGenButton15"
+                    text="Edit"
+                    press="pressEdit"
+                />
+               
+                <Button
+                    id="button"
+                    icon="sap-icon://slim-arrow-down"
+                    iconFirst="false"
+                    text="More"
+                    press="onPress"
+                    ariaHasPopup="Menu"
+                />
+            </contentLeft>
+            <contentRight>
+                <core:Icon
+                    id="_IDGenIcon33"
+                    src="sap-icon://print"
+                    class="size1"
+                    color="#FF0000"
+                />
+                <Button
+                    id="_IDGenButton19"
+                    text="Display"
+                />
+                <Button
+                    id="_IDGenButton20"
+                    text="Exit"
+                    press="onExit"
+                />
+            </contentRight>
+        </Bar>
+        <Label
+            text="Vessel Type Master Table "
+            class="masterheadings"
+        />
+        <Table
+            id="createTypeTable"
+            mode="MultiSelect"
+            items="{/CARTYP}"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+           
+        >
+            <columns>
+                <Column id="_IDGenColumn1">
+                    <Text
+                        id="_IDGenText11"
+                        text="Vessel Type"
+                    />
+                </Column>
+                <Column id="_IDGenColumn2">
+                    <Text
+                        id="_IDGenText2"
+                        text="Vessel Type Description"
+                    />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem1">
+                    <cells>
+                     
+                        <Text
+                            id="_IDGenInput1"
+                            text="{CARCD}"
+                        />
+                        <Text
+                            id="_IDGenInput2"
+                            text="{CARDES}"
+                        />
+                       
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <Table
+            id="entryTypeTable"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false"
+        >
+            <columns>
+                <Column>
+                    <Text text="Vessel Type" />
+                </Column>
+                <Column>
+                    <Text text="Vessel Type Description" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Input id="CARCD"  maxLength="4"/>
+                        <Input id="CARDES" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <Table
+            id="updateTypeTable"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false"
+           
+        >
+            <columns>
+                <Column>
+                    <Text text="Vessel Type" />
+                </Column>
+                <Column>
+                    <Text text="Vessel Type Description" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text id="CARCD1" text="" />
+                        <Input id="CARDES1"  editable="true"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <OverflowToolbar
+                id="mainPageFooter2"
+                design="Auto"
+                visible="false"
+            >
+                <ToolbarSpacer id="_IDGenToolbarSpacer4" />
+                <Button
+                    id="mainPageSave12"
+                    text="Update"
+                    press="onUpdate"
+                />
+                <Button
+                    id="_IDGenButton23"
+                    text="Cancel"
+                    press="onCancel"
+                />
+            </OverflowToolbar>
+ 
+ 
+            <!-- main page footer -->
+            <OverflowToolbar
+                id="mainPageFooter"
+                design="Auto"
+                visible="false"
+            >
+                <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+                <Button
+                    id="mainPageSave"
+                    text="Save"
+                    press="onSave"
+                />
+                <Button
+                    id="_IDGenButton22"
+                    text="Cancel"
+                    press="onCancel"
+                />
+            </OverflowToolbar>
+ 
+            <!--new entries footer -->
+           
+       
+    </Page>
+ s
+    
+</mvc:View>
